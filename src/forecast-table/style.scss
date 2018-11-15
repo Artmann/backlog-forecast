@@ -1,0 +1,29 @@
+
+.forecast-table {
+  background: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
+              0 2px 4px 0 rgba(0,0,0,0.08);
+  float: left;
+  margin-left: 4rem;
+  margin-top: 2rem;
+  width: 22rem;
+}
+
+.forecast-table-row {
+  color: #3D4852;
+  display: flex;
+  padding: 1rem 1.5rem;
+
+  &__probability {
+    font-weight: 700;
+    text-align: right;
+  }
+
+  &__sprint {
+    flex: 1;
+  }
+
+  &--dark {
+    background: #DAE1E7;
+  }
+}

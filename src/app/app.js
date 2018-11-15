@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ForecastInput from '../forecast-input';
-import './app.css';
+import ForecastTable from '../forecast-table';
 import Simulation from '../simulation';
+import './app.css';
 
 class App extends Component {
   constructor(props) {
@@ -18,21 +19,29 @@ class App extends Component {
   
     const simulation = new Simulation(dataSet, backlogSize);
 
-    simulation.run(iterations).then(result => {
-      console.log(result);
+    simulation.run(iterations).then(simulation => {
+      console.log(simulation);
  
-      this.setState({ isBuildingForeCast: false });
+      this.setState({
+        isBuildingForeCast: false,
+        simulation 
+      });
     }).catch(error => {
       console.log(error);
     });
   }
   
   render() {
-    const { isBuildingForeCast } = this.state;
+    const { isBuildingForeCast, simulation } = this.state;
 
     return (
       <div className="app">
-        <ForecastInput buildForecast={ this.buildForecast.bind(this) } isBuildingForeCast={ isBuildingForeCast }/>
+        <ForecastInput
+          buildForecast={ this.buildForecast.bind(this) }
+          isBuildingForeCast={ isBuildingForeCast }
+          />
+        
+        <ForecastTable simulation={ simulation } />
       </div>
     );
   }
