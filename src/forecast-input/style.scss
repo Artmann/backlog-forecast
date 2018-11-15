@@ -1,0 +1,48 @@
+
+.forecast-input {
+  background: #294c69;
+  box-shadow: 4px 0 8px 0 rgba(0,0,0,0.12);
+  color: #F1F5F8;
+  height: 100vh;
+  padding: 2rem;
+  width: 22rem;
+
+  &__create-button {
+    background: #22292F;
+    border: solid 1px #22292F;
+    box-shadow: 4px 0 8px 0 rgba(0,0,0,0.12);
+    color: #DAE1E7;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      background: #131619;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+
+  &__input {
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    color: #606F7B;
+    display: block;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    width: 80%;
+
+    &--higher {
+      height: 4rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './style.scss'
 
 export default class ForecastInput extends Component {
   constructor(props) {
@@ -33,23 +34,65 @@ export default class ForecastInput extends Component {
     };
 
     return (
-      <form onSubmit={ submit }>
-        <div>
-          <label htmlFor="backlog-size">Number of items in the backlog</label>
-          <input type="number" id="backlog-size" defaultValue={ backlogSize } name="backlogSize" onChange={ handleChange } />
-        </div>
-        <div>
-          <label htmlFor="throughput">A comma separated list of throughput values</label>
-          <textarea id="throughput" defaultValue={ throughputValues } name="backlogSize" onChange={ handleChange }></textarea>
-        </div>
-        <div>
-          <label htmlFor="iterations">Number of iterations</label>
-          <input type="number" id="iterations" defaultValue={ iterations } name="backlogSize" onChange={ handleChange } />
-        </div>
-        <div>
-          <input type="submit" defaultValue="Build forecast" disabled={ isBuildingForeCast } />
-        </div>
-      </form>
+      <div className="forecast-input">
+        <form onSubmit={ submit }>
+          <div>
+            <label
+              className="forecast-input__label"
+              htmlFor="backlog-size"
+              >
+                Number of items in the backlog
+              </label>
+            <input 
+              className="forecast-input__input"
+              defaultValue={ backlogSize }
+              id="backlog-size"
+              name="backlogSize"
+              onChange={ handleChange }
+              type="number"
+              />
+          </div>
+          <div>
+            <label
+              className="forecast-input__label"
+              htmlFor="throughput"
+              >
+                Throughput for each previous sprint, comma separated
+            </label>
+            <textarea 
+              className="forecast-input__input forecast-input__input--higher"
+              defaultValue={ throughputValues }
+              id="throughput"
+              name="backlogSize"
+              onChange={ handleChange }
+            ></textarea>
+          </div>
+          <div>
+            <label
+              className="forecast-input__label"
+              htmlFor="iterations"
+              >
+                Number of iterations
+            </label>
+            <input
+              className="forecast-input__input"
+              defaultValue={ iterations }
+              id="iterations"
+              name="backlogSize"
+              onChange={ handleChange }
+              type="number"
+              />
+          </div>
+          <div>
+            <button
+              className="forecast-input__create-button"
+              disabled={ isBuildingForeCast }
+              >
+              Build Forecast
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
