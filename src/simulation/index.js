@@ -1,11 +1,13 @@
 export default class Simulation {
   constructor(dataSet, backlogSize, randomFunction) {
     this.dataSet = dataSet;
-    this.backlogSize = backlogSize || 0;
+    this.backlogSize = parseInt(backlogSize || 0, 10);
     this.randomFunction = randomFunction || Math.random;
   }
 
-  run(iterations = 10000) {
+  run(iterations) {
+    iterations = parseInt(iterations || 10000, 10) 
+
     return new Promise((resolve, reject) => {
       if (!this.dataSet || !this.dataSet.length) {
         reject('Can not simulate an empty data set.');
