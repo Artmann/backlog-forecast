@@ -1,5 +1,6 @@
 {
   "name": "backlog-forecast",
+  "license": "MIT",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
