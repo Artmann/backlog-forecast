@@ -78,7 +78,7 @@ export default class ForecastInput extends Component {
               className="forecast-input__input"
               defaultValue={ iterations }
               id="iterations"
-              name="backlogSize"
+              name="iterations"
               onChange={ handleChange }
               type="number"
               />
