@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './style.scss'
+import './index.scss'
 
 export default class ForecastInput extends Component {
   constructor(props) {

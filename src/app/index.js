@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ForecastInput from '../forecast-input';
 import ForecastTable from '../forecast-table';
 import Simulation from '../simulation';
-import './app.css';
+import './index.css';
 
 class App extends Component {
   constructor(props) {
