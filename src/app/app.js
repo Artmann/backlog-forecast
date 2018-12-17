@@ -16,12 +16,10 @@ class App extends Component {
 
   buildForecast(dataSet, backlogSize, iterations) {
     this.setState({ isBuildingForeCast: true });
-  
+
     const simulation = new Simulation(dataSet, backlogSize);
 
     simulation.run(iterations).then(simulation => {
-      console.log(simulation);
- 
       this.setState({
         isBuildingForeCast: false,
         simulation 
