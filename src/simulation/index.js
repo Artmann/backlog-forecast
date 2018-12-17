@@ -1,12 +1,13 @@
 export default class Simulation {
-  constructor(dataSet, backlogSize) {
+  constructor(dataSet, backlogSize, randomFunction) {
     this.dataSet = dataSet;
     this.backlogSize = backlogSize || 0;
+    this.randomFunction = randomFunction || Math.random;
   }
 
   run(iterations = 10000) {
     return new Promise((resolve, reject) => {
-      if (!this.dataSet) {
+      if (!this.dataSet || !this.dataSet.length) {
         reject('Can not simulate an empty data set.');
       }
   
@@ -34,7 +35,7 @@ export default class Simulation {
     let sprintCount = 0;
 
     while (storyCount < this.backlogSize) {
-      const index = Math.floor(Math.random() * this.dataSet.length);
+      const index = Math.floor(this.randomFunction() * this.dataSet.length);
       const sample = this.dataSet[index];
       
       storyCount += sample;
